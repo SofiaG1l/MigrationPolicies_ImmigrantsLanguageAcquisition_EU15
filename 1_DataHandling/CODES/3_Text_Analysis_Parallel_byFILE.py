@@ -29,7 +29,7 @@ from zipfile import ZipFile
 import gc
 
 ''' Importing My Functions '''
-os.chdir("/p300199/GilClavel_3Article/1_DataHandling/CODES/")
+os.chdir("/1_DataHandling/CODES/")
 # Functions from previous code
 import Classify_Lan_Code_Mig_3_7_20210813 as TXT
 
@@ -42,7 +42,7 @@ if __name__ ==  '__main__': # AQUI ESTA EL MAIN
     print("Process starts at: "+str(time.ctime()))
     
     # Path to the folder with the Twits by origin|| And the Migrant-NoMigrant Folder
-    PATH_Twits_filter="/p300199/GilClavel_3Article/1_DataHandling/PROCESSED/"
+    PATH_Twits_filter="/1_DataHandling/PROCESSED/"
     
     TXT.Processing_Text_ParThreads_FILES(PATH_Twits_filter,NumCores=6)
         
