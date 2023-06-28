@@ -99,7 +99,7 @@ COUNT_LANGUAGE<-data.frame(row.names = c("DK","DE","AT","NL","GB","FR","FI","LU"
 
 
 # Subregions
-REGIONS<-read.csv("p300199/GilClavel_3Article/2_DataAnalysis/Subregions.csv")
+REGIONS<-read.csv("2_DataAnalysis/Subregions.csv")
 REGIONS<-REGIONS[,c(2,4)]
 REGIONS<-REGIONS[!is.na(REGIONS$CODE),]
 REGIONS<-rbind(REGIONS,c("Europe","XK")) #"Kosovo"
@@ -108,7 +108,7 @@ REGIONS<-rbind(REGIONS,c("Europe","JE")) #"Jersey"
 REGIONS<-rbind(REGIONS,c(NA,"Unknown"))
 
 # List of files 
-setwd("p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/Possible_Migrants_Final/")
+setwd("2_DataAnalysis/PROCESSED/Possible_Migrants_Final/")
 FILES<-list.files()
 FILES1=which(str_detect(FILES,"IMMIG"))
 COUNTRIES<-c("DK","DE","AT","NL","GB","FR","FI","PT","BE","GR","IE","IT","ES","SE") # "LU",
@@ -306,7 +306,7 @@ BASE_S<-BASE_S%>%
 BASE<-BASE%>%filter(USER%in%BASE_S$USER)
 
 #### Saving the Data ####
-save(BASE, BASE_S, file="p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/Mig_Processed_Final.RData")
+save(BASE, BASE_S, file="2_DataAnalysis/PROCESSED/Mig_Processed_Final.RData")
 
 
 
