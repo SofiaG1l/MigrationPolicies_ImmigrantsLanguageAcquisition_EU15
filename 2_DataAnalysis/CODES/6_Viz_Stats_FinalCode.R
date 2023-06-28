@@ -11,13 +11,13 @@ rm(list = ls())
 gc()
 
 ## Opening the Data
-load(file="p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
+load(file="2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
 BASE_S<-BASE_S%>%filter(migrant=="Trajectory")
 
 
 #### Language Plots ####
 
-LANGS<-read.csv("p300199/GilClavel_3Article/2_DataAnalysis/DATA/World_Languages.csv",stringsAsFactors = FALSE)
+LANGS<-read.csv("2_DataAnalysis/DATA/World_Languages.csv",stringsAsFactors = FALSE)
 LANGS<-LANGS%>% 
   unite("z", LANG_CODE1:LANG_CODE6, remove = FALSE,na.rm = TRUE)
 
@@ -76,7 +76,7 @@ DB_ALL%>%
   guides(fill=guide_legend(title = "Lang.\nTweets",
                            byrow = TRUE, nrow=2))
   
-# ggsave("p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/GilClavel_FigA1.png",units = "cm",width = 30,height = 20)
+# ggsave("2_DataAnalysis/PROCESSED/IMAGES/GilClavel_FigA1.png",units = "cm",width = 30,height = 20)
 
 
 #### Some statistics from the users ####
@@ -155,7 +155,7 @@ C=VIS_RR%>%
   scale_fill_manual(values = CLUSTER_COLOR)+
   labs(y=NULL,x="c) Users' Total Number of Months")
 
-# png('p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure_I.png',
+# png('2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure_I.png',
 #     units = "cm",width = 15*1.3,height = 15*1,res = 200)
 # # cairo_ps('2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure_I.eps',
 # #   fallback_resolution=300,width = 6.08,height = 4.728,bg="white")
