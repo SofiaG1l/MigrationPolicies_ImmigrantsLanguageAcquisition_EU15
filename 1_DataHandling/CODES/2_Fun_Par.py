@@ -202,7 +202,7 @@ def Processing_Users_Ids_Par(Dir_Dest):
 
 if __name__ ==  '__main__': # AQUI ESTA EL MAIN
     # The parameter is the directory where the output should be saved
-    Processing_Users_Ids_Par('p300199\\GilClavel_3Article\\1_DataHandling\\PROCESSED')
+    Processing_Users_Ids_Par('1_DataHandling\\PROCESSED')
 
     print('End Process\n')
     
