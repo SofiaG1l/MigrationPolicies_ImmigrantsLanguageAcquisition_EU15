@@ -120,9 +120,9 @@ COUNT_LANGUAGE<-data.frame(row.names = c("DK","DE","AT","NL","GB","FR","FI","LU"
 
 #### This comes from the folders with all the users from the same countries #####
 
-Dir_2_save="p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/"
+Dir_2_save="2_DataAnalysis/PROCESSED/"
 
-setwd("p300199/GilClavel_3Article/1_DataHandling/PROCESSED")
+setwd("1_DataHandling/PROCESSED")
 
 FILES<-c("DK","DE","AT","NL","FR","FI","LU","GB","PT","BE","GR","IE","IT","ES","SE") # 
 FILES<-paste0(FILES,".csv")
@@ -227,9 +227,9 @@ for(efe in FILES){
 
 
 #### This comes from the files ALL_COUNTRIES_IMMIG ####
-Dir_2_save="p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/Possible_Migrants_Final/"
+Dir_2_save="2_DataAnalysis/PROCESSED/Possible_Migrants_Final/"
 
-setwd("p300199/GilClavel_3Article/1_DataHandling/PROCESSED")
+setwd("1_DataHandling/PROCESSED")
 
 FILES<-list.files()[str_detect(list.files(),"IMMIG")]
 
