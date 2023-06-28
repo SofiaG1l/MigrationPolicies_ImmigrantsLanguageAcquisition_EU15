@@ -33,7 +33,7 @@ set.seed(155)
 
 #### Opening the Data ####
 # DB with all the info from the possible Migrants
-load(file="p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/Mig_Processed_Final.RData")
+load(file="2_DataAnalysis/PROCESSED/Mig_Processed_Final.RData")
 
 #### Merging Regions ####
 REGIONS<-read.csv("DATA/Subregions_2.csv")
@@ -54,7 +54,7 @@ BASE_S$REGION<-factor(BASE_S$REGION,
 
 #### Filtering only those which language tweet is valid language country ####
 
-LANGS<-read.csv("p300199/GilClavel_3Article/2_DataAnalysis/DATA/World_Languages.csv",stringsAsFactors = FALSE)
+LANGS<-read.csv("2_DataAnalysis/DATA/World_Languages.csv",stringsAsFactors = FALSE)
 LANGS<-LANGS%>%
   unite("z", LANG_CODE1:LANG_CODE6, remove = FALSE,na.rm = TRUE)
 
@@ -104,13 +104,13 @@ BASE<-BASE%>%filter(USER%in%BASE_S$USER)
 # which we label PROX1 and PROX2. This series are available for 195 countries.
 
 # Adding the ISO 2 codes
-CODES<-read.csv("p300199/GilClavel_3Article/2_DataAnalysis/DATA/Country_Code.csv")
+CODES<-read.csv("2_DataAnalysis/DATA/Country_Code.csv")
 CODES<-CODES[,c(3,2)]
 
 # In the data Belgium and Luxemburg are together!!
 # The ling_web.dta comes from:
 # http://www.cepii.fr/CEPII/en/bdd_modele/presentation.asp?id=19. Accessed April 12, 2021.
-DB_LANG<-read.dta("p300199/GilClavel_3Article/2_DataAnalysis/DATA/ling_web.dta")
+DB_LANG<-read.dta("2_DataAnalysis/DATA/ling_web.dta")
 
 #Correction for Belgium and Luxembourg
 CODES%>%filter(CODE1%in%c("LU","BE"))
@@ -167,7 +167,7 @@ BASE_S<-BASE_S%>%mutate(Other_Eng=I(english==TRUE&NoLangValid==TRUE))
 #### Adding Geographical Distance ####
 # The Gravity_V202102.csv comes from:
 # http://www.cepii.fr/CEPII/en/bdd_modele/presentation.asp?id=19. Accessed April 12, 2021.
-GRAVITY<-read.csv("p300199/GilClavel_3Article/2_DataAnalysis/DATA/Gravity_V202102.csv",stringsAsFactors = FALSE)
+GRAVITY<-read.csv("2_DataAnalysis/DATA/Gravity_V202102.csv",stringsAsFactors = FALSE)
 
 GRAVITY<-GRAVITY%>%
   filter(year==2019)%>%
@@ -184,7 +184,7 @@ BASE_S<-BASE_S%>%
   left_join(GRAVITY,c("origin"="code_o","destination"="code_d"))
 
 #### Size based on size folders ####
-dirs="p300199/GilClavel_3Article/1_DataHandling/PROCESSED/Users_Classified_20210118/"
+dirs="1_DataHandling/PROCESSED/Users_Classified_20210118/"
 SIZE_FOLS<-file.info(paste0(dirs,list.files(dirs, all.files = TRUE, recursive = TRUE)))
 
 SIZE_FOLS$NAME<-str_remove(row.names(SIZE_FOLS), dirs)
@@ -201,7 +201,7 @@ BASE_S<-BASE_S%>%mutate(ratio=log(SIZE.x/SIZE.y))
 # Eurostat. (2021). Number of foreign languages known (self-reported) by sex. 
 # [Dataset page]. Retrieved November 17, 2021, from Eurostat Data Browser website: 
 # https://ec.europa.eu/eurostat/databrowser/view/EDAT_AES_L21/default/table?lang=en&category=sks.sks_ssr.sks_ssaes.edat_aes_l2. 
-PER_FOR<-read.csv("p300199/GilClavel_3Article/2_DataAnalysis/DATA/PercentageForeignLanguage.csv",
+PER_FOR<-read.csv("2_DataAnalysis/DATA/PercentageForeignLanguage.csv",
                   stringsAsFactors = FALSE)
 
 BASE_S<-BASE_S%>%
@@ -222,7 +222,7 @@ dim(BASE_S)
 
 #### Adding extra columns with CIVIX and CPI ####
 
-CIVIX_CPI<-read.csv("p300199/GilClavel_3Article/2_DataAnalysis/DATA/Goodman_Howard.csv")
+CIVIX_CPI<-read.csv("2_DataAnalysis/DATA/Goodman_Howard.csv")
 
 head(CIVIX_CPI)
 
@@ -243,6 +243,6 @@ BASE_S$ONE_MORE<-(BASE_S$ONE_MORE-mean(BASE_S$ONE_MORE,na.rm=TRUE))/sqrt(var(BAS
 BASE_S$Other_Eng<-factor(BASE_S$Other_Eng,c(FALSE,TRUE))
 
 
-save(BASE, BASE_S, file="p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
+save(BASE, BASE_S, file="2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
 
 
