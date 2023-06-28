@@ -41,11 +41,11 @@ set.seed(44)
 
 
 #### Opening the already processed data ####
-load(file="p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
+load(file="2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
 BASE_S<-BASE_S%>%filter(migrant=="Trajectory")
 
 ## Opening CIVIX_CPI:
-CIVIX_CPI<-read.csv("p300199/GilClavel_3Article/2_DataAnalysis/DATA/Goodman_Howard.csv")
+CIVIX_CPI<-read.csv("2_DataAnalysis/DATA/Goodman_Howard.csv")
 
 
 #### Ploting Kaplan-Meier curve ####
@@ -111,7 +111,7 @@ ggplot(REG,aes(lnt,lnln))+
   theme_minimal(base_size = 15)+theme(legend.position = "top")+
   xlab("ln(t)")+ylab("ln(-ln(S))")
 
-# ggsave("p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/KM_WEIB_Linear_bw.png",width = 10,height = 5)
+# ggsave("2_DataAnalysis/PROCESSED/IMAGES/KM_WEIB_Linear_bw.png",width = 10,height = 5)
 
 summary(lm(lnln~lnt,REG))
 betas=coef(lm(lnln~lnt,REG))
@@ -131,14 +131,14 @@ print(paste0("lamda=",exp(betas[1]),"; shape=",betas[2]))
          legend.position = "top")
 )
 
-# ggsave("p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/KM_WEIB_1.png",width = 15,height = 10) #units = "cm",
+# ggsave("2_DataAnalysis/PROCESSED/IMAGES/KM_WEIB_1.png",width = 15,height = 10) #units = "cm",
 
 ### Adding the weibull estimate dists.
 (KM<-KM+stat_smooth(method = 'drm', 
                     formula = "y~x",
                     se = FALSE,color="black",
                     method.args = list(fct = W2.2()))) # W2.2()
-# ggsave("p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/KM_WEIB_CIVIX_CPI_bw.png",width = 15,height = 10)
+# ggsave("2_DataAnalysis/PROCESSED/IMAGES/KM_WEIB_CIVIX_CPI_bw.png",width = 15,height = 10)
 
 
 #### Variables Names #### 
@@ -214,7 +214,7 @@ ggplot(HZ, aes(x=COEFS, y=ETR)) + #
                                         fill = NA, size = 1),
         axis.line = element_line(color = 'black'))
 
-# ggsave("p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure_A3b.png",
+# ggsave("2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure_A3b.png",
 #        dpi = 600,width = 12,height = 9,units = "cm")
 
 ### AFT Model: Without Gender ####
@@ -260,7 +260,7 @@ ggplot(HZ, aes(x=COEFS, y=ETR)) + #
                                         fill = NA, size = 1),
         axis.line = element_line(color = 'black'))
 
-# ggsave("p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure_3.png",
+# ggsave("2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure_3.png",
 #        dpi = 600,width = 12,height = 9,units = "cm")
 
 
@@ -402,7 +402,7 @@ p1.1<-p0+
 leg1=get_legend(p0.1)
 leg2=get_legend(p1.1)
 
-# png('p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure_4.png',
+# png('2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure_4.png',
 #     units = "cm",width = 15*1.3,height = 15*1.3,res = 200)
 gridExtra::grid.arrange(p0,leg2,leg1,
                         ncol=1,nrow=3,
