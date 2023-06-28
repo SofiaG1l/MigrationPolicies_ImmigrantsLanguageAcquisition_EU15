@@ -223,7 +223,7 @@ def ProbsNames(PATH, YEAR0, YEAR1):
     
     return(dict(zip(list(map(str.lower,DB.index)), DB["F"])))
 
-def GenderizoNames(paths='\\p300199\\GilClavel_3Article\\1_DataHandling\\DATA\\Names_for_Gender\\Genderizo\\'):
+def GenderizoNames(paths='\\1_DataHandling\\DATA\\Names_for_Gender\\Genderizo\\'):
     # Complementing with gender.izo
     NAME1=pd.read_csv(paths+"namesdataset_Germany.csv")
     NAME1=NAME1.rename(columns={"Unnamed: 0":"ROW","FIRSTNAME":"name"})
@@ -738,11 +738,11 @@ def Processing_Text_ParThreads_FILES(Dir_Dest,NumCores=3):
     
     # This code runs in Linux; therefore, the tweets processed in the MPIDR servers 
     # were stored in a ZIP file
-    file_name="\\p300199\\GilClavel_3Article\\1_DataHandling\\PROCESSED\\Migrants_Tweets_All_JSONS.zip"
+    file_name="\\1_DataHandling\\PROCESSED\\Migrants_Tweets_All_JSONS.zip"
     # Path to babies names:
-    PATH_N="\\p300199\\GilClavel_3Article\\1_DataHandling\\DATA\\Names_for_Gender\\"
+    PATH_N="\\1_DataHandling\\DATA\\Names_for_Gender\\"
     # Path to countries data base
-    PATH_C='\\p300199\\GilClavel_3Article\\1_DataHandling\\DATA\\'
+    PATH_C='\\1_DataHandling\\DATA\\'
     
     '''' Important DB Countries and Cities '''
     # Countries Names and Codes
