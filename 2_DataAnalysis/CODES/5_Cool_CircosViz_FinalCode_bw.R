@@ -5,7 +5,8 @@
 # Date: March 6th, 2022.
 # 
 # Description: Code to replicate the article:
-#   "EU-15 Immigrants Language Acquisition on Twitter"
+#   Gil-Clavel, S., Grow, A., & Bijlsma, M. J. (2023). Migration Policies and Immigrants’ Language Acquisition in EU-15: 
+#   Evidence from Twitter. Population and Development Review. https://doi.org/10.1111/padr.12574
 # 
 # Computer Environment:
 #   - Windows 
