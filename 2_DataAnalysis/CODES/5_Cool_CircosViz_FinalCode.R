@@ -33,7 +33,7 @@ library(RColorBrewer)
 library(circlize)
 
 #### Opening the Data ####
-load(file="p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
+load(file="2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
 
 BASE_S<-BASE_S%>%filter(migrant=="Trajectory")
 
@@ -70,10 +70,10 @@ df1 <- data.frame(country, color,stringsAsFactors = FALSE)
 names(color)<-country
 
 # For the journal:
-# cairo_ps('p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure2.eps',
+# cairo_ps('2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure2.eps',
 #          fallback_resolution=300,width = 6.08,height = 6.08,bg="white")
 
-# pdf("p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure2.pdf",
+# pdf("2_DataAnalysis/PROCESSED/IMAGES/GilClavel_Figure2.pdf",
 #     width = 15,height = 15)
 circos.clear()
 circos.par(start.degree = 90, gap.degree = 5, track.margin = c(-0.1, 0.1), points.overflow.warning = FALSE)
