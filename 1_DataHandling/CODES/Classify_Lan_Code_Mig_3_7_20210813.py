@@ -8,8 +8,8 @@
 # Date: Last update August 2021
 # 
 # Description: Functions to process the data used in the article:
-#   "Gil-Clavel, S., Grow, A., & Bijlsma, M. J. (2023) Migration Policies and  
-#   Immigrants’ Language Acquisition in EU-15: Evidence from Twitter"
+#   Gil-Clavel, S., Grow, A., & Bijlsma, M. J. (2023). Migration Policies and Immigrants’ Language Acquisition in EU-15: 
+#   Evidence from Twitter. Population and Development Review. https://doi.org/10.1111/padr.12574
 # 
 # Computer Environment:
 #   - Linux
