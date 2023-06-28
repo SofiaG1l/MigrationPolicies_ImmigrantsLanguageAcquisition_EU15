@@ -33,7 +33,7 @@ library(RColorBrewer)
 library(circlize)
 
 #### Opening the Data ####
-load(file="p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
+load(file="2_DataAnalysis/PROCESSED/Mig_Processed_TOMODEL_Final.RData")
 BASE_S<-BASE_S%>%filter(migrant=="Trajectory")
 
 # Arranging Columns
@@ -62,7 +62,7 @@ color=c("gray88","gray68","gray48","grey28","grey8",rep("gray95",4))
 df1 <- data.frame(country, color,stringsAsFactors = FALSE)
 names(color)<-country
 
-# pdf("p300199/GilClavel_3Article/2_DataAnalysis/PROCESSED/IMAGES/Chord_Mig_Clusters_bw.pdf",
+# pdf("2_DataAnalysis/PROCESSED/IMAGES/Chord_Mig_Clusters_bw.pdf",
 #     width = 15,height = 15)
 circos.clear()
 circos.par(start.degree = 90, gap.degree = 5, track.margin = c(-0.1, 0.1), points.overflow.warning = FALSE)
