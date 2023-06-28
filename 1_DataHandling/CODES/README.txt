@@ -7,4 +7,4 @@ the tweets is also assigned as well as the users' gender. For this use the funct
 
 The last code "3_Text_Analysis_Parallel_byFILE.py" depends of "Classify_Lan_Code_Mig_3_7_20210813.py".
 
-The rest of the steps are performed in R. Check the folder "\p300199\GilClavel_3Article\2_DataAnalysis".
+The rest of the steps are performed in R. Check the folder "\2_DataAnalysis".
